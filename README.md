@@ -1,5 +1,5 @@
 # Sports betting on golang
-Functional project
+## Functional project
 
 -- Connecting to a PostgreSQL database
 
@@ -9,8 +9,16 @@ Functional project
 
 -- Creating a sports match
 
--- Bet on the match
-
 -- Getting-a complete list of sports matches
 
 -- Search for a sports match
+
+-- Editing a match
+
+-- Deletion of the match
+
+-- Bet on the match
+
+-- Editing a bet
+
+-- Removing a bet
