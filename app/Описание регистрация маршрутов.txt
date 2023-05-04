@@ -1,0 +1,43 @@
+Не стал использовать потому что без CRUD или требования быть зарегистрированным.
+
+пример:
+
+package api
+
+import (
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+
+func RegisterRoutes(router *gin.Engine) {
+
+	
+	userRoutes := router.Group("/api")
+	{
+		// Маршрут для регистрации пользователей
+		api.POST("/register", Register)
+
+		// Маршрут для авторизации пользователей
+		api.POST("/login", Login)
+	}
+
+	// Маршрут по умолчанию
+	router.NoRoute(func(c *gin.Context) {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Not found"})
+	})
+}
+
+// Регистрация маршрутов в main.go
+    repo := api.NewUserRepo(database.DB)
+    app.RegisterRoutes(router, repo)
+
+
+// api.go
+
+type UserRepo struct{}
+
+func NewUserRepo(db *sql.DB) *UserRepo {
+    return &UserRepo{db: db}
+}
